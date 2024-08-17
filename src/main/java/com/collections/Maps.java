@@ -52,7 +52,9 @@ public class Maps {
     public List<Map.Entry<String, Integer>> listInventory(Map<String, Integer> inventory) {
         List<Map.Entry<String, Integer>> list = new ArrayList<>();
         for (Map.Entry<String, Integer> entry : inventory.entrySet()) {
-            list.add(entry);
+            if (entry.getValue() > 0) {
+                list.add(entry);
+            }
         }
         return list;
     }
